@@ -1,0 +1,49 @@
+:root {
+    --textfont: #ffffff;
+}
+
+.banner {
+    background: linear-gradient(#6610f2, #b180ff);
+    color: var(--textfont);
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.five-day-summary {
+    background: #6610f2;
+    color: var(--textfont);
+}
+
+.summary {
+    border: 2px solid black;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-right: 10px;
+}
+
+aside {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 20%;
+    margin: 10px;
+}
+
+p {
+    font-size: 28px;
+    padding-left: 12px;
+    margin-bottom: 3px;
+}
