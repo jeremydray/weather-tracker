@@ -62,3 +62,16 @@ form {
     font-size: 36px;
     margin-bottom: -30px;
 }
+
+.summary {
+    padding-left: 5px;
+}
+
+h2,
+h4 {
+    margin-bottom: 0px;
+}
+
+.forecast {
+    margin-top: 30px;
+}
