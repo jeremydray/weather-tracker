@@ -4,7 +4,7 @@ const submitFormEl = document.querySelector("#searchForm");
 const today = dayjs()
 
 function getCoordData(location) {
-    const searchCoords = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=1410727907f1356e58d504895991c0a8`;
+    const searchCoords = `https://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=1410727907f1356e58d504895991c0a8`;
 
 
     fetch(searchCoords)
@@ -20,7 +20,7 @@ function getCoordData(location) {
                 const lon = data[i].lon
                 const lat = data[i].lat
                 getLocationData(lat, lon);
-                getForecastData(lat, lon)
+                // getForecastData(lat, lon);
             }
         })
 };
@@ -62,18 +62,18 @@ function currentResults(resultsObj) {
     weatherEl.append(weatherSummary, weatherHeaderObj)
 }
 
-function getForecastData(lat, lon) {
-    const searchLocation = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=1410727907f1356e58d504895991c0a8&units=imperial`;
+// function getForecastData(lat, lon) {
+//     const searchLocation = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=1410727907f1356e58d504895991c0a8&units=imperial`;
 
-    fetch(searchLocation)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (results) {
-            console.log(results);
-            forecastResults(results)
-        })
-}
+//     fetch(searchLocation)
+//         .then(function (response) {
+//             return response.json();
+//         })
+//         .then(function (results) {
+//             console.log(results);
+//             forecastResults(results)
+//         })
+// }
 
 // function forecastResults() {
 //     const forecastBody = document.createElement('div');
