@@ -11,7 +11,7 @@ const submitFormEl = document.querySelector("#searchForm")
 // }
 
 function getWeatherData(location) {
-    const searchCoords = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=d41e08b71748291da0d6f108d0610b6b`;
+    const searchCoords = `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=1410727907f1356e58d504895991c0a8`;
 
 
     fetch(searchCoords)
@@ -24,49 +24,31 @@ function getWeatherData(location) {
         .then(function (data) {
             console.log(data)
             for (let i = 0; i < data.length; i++) {
-                const lon = Math.round(data[i].lon * 100) / 100;
-                const lat = Math.round(data[i].lat * 100) / 100
+                const lon = data[i].lon
+                const lat = data[i].lat
                 getLocationData(lat, lon)
             }
         })
 };
 
-
-// })
-// .then(fetch(searchLocation)
-//     .then(function (response) {
-//         if (!response.ok) {
-//             throw response.json();
-//         }
-
-//         return response.json();
-//     })
-//     .then(function (data) {
-//         console.log(data)
-//     })
-// )
-
-// 
-
-
-
-
-
-
 function getLocationData(lat, lon) {
-    let searchLocation = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=d41e08b71748291da0d6f108d0610b6b`;
+    const searchLocation = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=1410727907f1356e58d504895991c0a8`;
 
     fetch(searchLocation)
         .then(function (response) {
             return response.json();
         })
-        .then(function (data) {
-            console.log(data)
+        .then(function (results) {
+            console.log(results);
+            for (let i = 0; i < results.length; i++)
+                forecastResults(results)
         })
-}
+};
 
 //Creation of the Search Results and 5-Day Forecast Cards
-function forecastResults(results) {
+function forecastResults(resultsObj) {
+    console.log(resultsObj);
+
     const forecastSummary = document.createElement('div');
     forecastSummary.classList.add('container.xl', 'col-12', 'summary')
     const forecastHeaderObj = document.createElement('div');
