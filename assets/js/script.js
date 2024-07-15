@@ -63,7 +63,7 @@ function currentResults(resultsObj) {
 }
 
 function getForecastData(lat, lon) {
-    const searchLocation = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=1410727907f1356e58d504895991c0a8&units=imperial`;
+    const searchLocation = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=1410727907f1356e58d504895991c0a8&units=imperial`;
 
     fetch(searchLocation)
         .then(function (response) {
