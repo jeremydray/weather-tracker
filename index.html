@@ -14,37 +14,16 @@
     <header class="banner">Weather Dashboard</header>
     <div class="flex">
         <aside>
-            <h3>Search for a City:</h3>
-            <input placeholder="Search for City"></input>
-            <button>Search</button>
-        </aside>
-        <main>
-            <div class="container.xl col-12 summary "></div>
-            <div class="container.xl col-12">
-                <h3>5 Day Forecast:</h3>
-            </div>
-            <div class="container.xl col-12">
-                <div class="row justify-content-start">
-                    <div class="container">
-                        <div class="row ">
-                            <div class="col">
-                                <div class="p-3 border five-day-summary day1">Row column</div>
-                            </div>
-                            <div class="col">
-                                <div class="p-3 border five-day-summary day2">Row column</div>
-                            </div>
-                            <div class="col">
-                                <div class="p-3 border five-day-summary day3">Row column</div>
-                            </div>
-                            <div class="col">
-                                <div class="p-3 border five-day-summary day4">Row column</div>
-                            </div>
-                            <div class="col">
-                                <div class="p-3 border five-day-summary day5">Row column</div>
-                            </div>
-                        </div>
-                    </div>
+            <form class="row g-3 needs-validation" novalidate id="searchForm">
+                <label>Search for a City:</label>
+                <input type="text" class="form-control" required placeholder="City" id="citySubmission">
+                <div class="invalid-feedback">
+                    Please provide a valid city.
                 </div>
+                <button class="btn btn-primary col-12" type="submit">Search</button>
+            </form>
+        </aside>
+        <main id="forecast">
         </main>
     </div>
 

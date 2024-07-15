@@ -33,6 +33,7 @@ main {
     flex-wrap: wrap;
     width: 80%;
     margin-right: 10px;
+    margin-left: 10px;
 }
 
 aside {
@@ -42,8 +43,22 @@ aside {
     margin: 10px;
 }
 
-p {
+label {
     font-size: 28px;
-    padding-left: 12px;
-    margin-bottom: 3px;
+    font-weight: 600;
+}
+
+button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+form {
+    padding-bottom: 10px;
+    border-bottom: solid 5px black;
+}
+
+.header-container {
+    font-size: 36px;
+    margin-bottom: -30px;
 }
