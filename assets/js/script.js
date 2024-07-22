@@ -44,7 +44,6 @@ function getLocationData(lat, lon) {
             return response.json();
         })
         .then(function (results) {
-            console.log(results)
             currentResults(results)
         })
 };
@@ -63,7 +62,6 @@ function currentResults(resultsObj) {
         humidity: resultsObj.main.humidity
     }
 
-    console.log(weatherData.city)
     const weatherSummary = document.createElement('div');
     weatherSummary.classList.add('container.xl', 'col-12', 'summary')
     weatherSummary.innerHTML = `<h2><strong>${weatherData.city} (${weatherData.date})</strong> <img src=${weatherData.icon} height="35"></img></h2><br/> <h4>Temp: ${weatherData.temp}</h4><br/><h4>Wind: ${weatherData.wind} MPH</h4><br/><h4>Humidity: ${weatherData.humidity}%</h4>`;
@@ -88,13 +86,13 @@ function currentResults(resultsObj) {
 
 
 function getForecastData(lat, lon) {
-    const searchLocation = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=1410727907f1356e58d504895991c0a8&units=imperial`;
-
+    const searchLocation = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=1410727907f1356e58d504895991c0a8&units=imperial`
     fetch(searchLocation)
         .then(function (response) {
             return response.json();
         })
         .then(function (results) {
+            console.log(results)
             forecastResults(results)
         })
 }
@@ -104,13 +102,14 @@ function forecastResults(results) {
     const forecastBody = document.createElement('div');
     forecastBody.classList.add('container.xl', 'col-12', 'row', 'justify-content-start', 'forecast');
 
-    for (let i = 4; i < 44; i = i + 8) {
+    for (let i = 6; i <= 40; i = i + 8) {
         const forecastCard = document.createElement('div');
         forecastCard.classList.add('col');
         const forecastDetail = document.createElement('div');
         forecastDetail.classList.add('p-3', 'five-day-summary', `day${i}`);
 
-        let date = results.list[i].dt_txt.replace(" 18:00:00", '')
+        let date = results.list[i].dt_txt
+        console.log(date)
         const forecastDay = dayjs(date).format("MM/DD/YYYY");
         const forecastIcon = `https://openweathermap.org/img/wn/${results.list[i].weather[0].icon}@2x.png`;
         const forecastTemp = results.list[i].main.temp
@@ -149,8 +148,6 @@ function clearData() {
     previousSearchEl.innerHTML = ""
     location.reload();
 }
-
-
 
 // Bootstrap Data Validation for Form Submission
 (function () {

@@ -76,6 +76,6 @@ h4 {
     margin-top: 30px;
 }
 
-/* p {
-    padding: 0px;
-} */
+.five-day-summary {
+    border: solid 3px black
+}
