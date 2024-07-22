@@ -13,7 +13,7 @@
 <body>
     <header class="banner">Weather Dashboard</header>
     <div class="flex">
-        <aside>
+        <aside class="search">
             <form class="row g-3 needs-validation" novalidate id="searchForm">
                 <label>Search for a City:</label>
                 <input type="text" class="form-control" required placeholder="City" id="citySubmission">
@@ -22,14 +22,16 @@
                 </div>
                 <button class="btn btn-primary col-12" type="submit">Search</button>
             </form>
+            <button class="btn btn-danger col-12 clearData">Clear Results</button>
+            <div class="previousSearches"></div>
         </aside>
+
         <main id="weather">
         </main>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-    <script>dayjs().format()</script>
-    <script src="./assets/js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+        <script>dayjs().format()</script>
+        <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
