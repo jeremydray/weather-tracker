@@ -41,6 +41,7 @@ aside {
     flex-flow: column nowrap;
     width: 20%;
     margin: 10px;
+    margin-left: 20px;
 }
 
 label {
